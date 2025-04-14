@@ -1,0 +1,153 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #ffebcd;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #1a1a2e;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/023/814/059/large_2x/abstract-colorful-of-smoke-background-neon-light-through-smoke-or-fog-lighting-in-the-dark-scene-multi-colored-of-cloud-mist-or-smog-night-backdrop-for-mock-up-with-generative-ai-free-photo.jpeg'); /* Add your background image */
+    background-position: center;
+    background-size: cover; 
+    background-attachment: fixed; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main Container */
+#main { 
+    height: 80vh;
+    width: 50%;
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* Music Card */
+#card {
+    height: 600px;
+    width: 370px;
+    border: solid rgb(5, 157, 238);
+    backdrop-filter: blur(3px); 
+    background: rgba(0, 0, 0, 0.193);
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+    
+}
+
+#card img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Player Controls */
+#player {
+    margin-top: 20px;
+    height: 45%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#player h3 {
+    background-color: #b09511;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#player h3 i {
+    font-size: 25px;
+    color: #1a1a2e;
+}
+
+#player h3:hover {
+    background-color: #ffd863;
+    transform: scale(1.1);
+}
+
+#player h3:active {
+    scale: 0.9;
+}
+
+/* Song List Section */
+#song-list {
+    height: 600px;
+    width: 370px;
+    border: solid rgb(5, 157, 238);
+    backdrop-filter: blur(3px);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.193);
+}
+
+#song-list h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #04f5e5ec;
+}
+
+#all-songs {
+    height: 80%;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+/* Hide Scrollbar for Webkit Browsers */
+#all-songs::-webkit-scrollbar {
+    display: none;
+}
+
+/* Song Cards */
+.song-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #000000;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.song-card:hover {
+    background-color: #2b1b1e;
+    transform: scale(1.02);
+}
+
+.song-card:active {
+    transform: scale(0.93);
+}
+
+.song-card:nth-last-child(1) {
+    border-bottom: 1px solid #050400;
+}
+
+/* Song Details */
+.song-card .part-1 {
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.song-card img {
+    width: 55px;
+    height: 55px;
+    margin-right: 15px;
+    border-radius: 10px;
+    object-fit: cover;
+}
