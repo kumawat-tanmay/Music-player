@@ -3,31 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="music.css">
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"
-    />
-    <title>Document</title>
 </head>
-<body>
-    <div id="main">
-        <img src="wallpapers/" alt="">
-        <div id="card">
-                <img id="pic"  alt="">
-                <div id="player">
-                    <h3 id="back"><i class="ri-skip-back-mini-fill"></i></h3>
-                    <h3 id="play"><i class="ri-play-large-fill"></i></h3>
-                    <h3 id="forward"><i class="ri-skip-forward-mini-fill"></i></h3>
-                </div>
-        </div>    
-        <div id="song-list">
-            <h2>All Songs</h2>
-            <div id="all-songs">
-                
-            </div>
+<body class="bg-gray-900 text-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="music-player bg-gray-800 rounded-3xl shadow-2xl p-4 sm:p-6 w-full max-w-sm sm:max-w-md mx-auto flex flex-col items-center space-y-4 sm:space-y-6">
+       
+        <div id="pic" class="w-32 h-32 sm:w-48 sm:h-48 bg-gray-700 rounded-2xl shadow-lg flex items-center justify-center overflow-hidden bg-cover bg-center">
+            
+        </div>
+       
+        <h2 id="current-song-name" class="text-xl sm:text-3xl font-bold text-center mt-2 sm:mt-4">Song Name</h2>
+
+       
+        <div class="controls flex items-center justify-center space-x-4 sm:space-x-6 w-full max-w-xs">
+            <button id="back" class="control-button">
+                <i class="ri-skip-back-fill"></i>
+            </button>
+            <button id="play" class="control-button">
+                <i class="ri-play-large-fill"></i>
+            </button>
+            <button id="forward" class="control-button">
+                <i class="ri-skip-forward-fill"></i>
+            </button>
+        </div>
+
+        
+        <div id="all-songs" class="w-full max-h-64 sm:max-h-80 overflow-y-auto pr-2 space-y-2 sm:space-y-3">
+            
         </div>
     </div>
+
+    
     <script src="music.js"></script>
 </body>
 </html>

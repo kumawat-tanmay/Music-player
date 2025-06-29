@@ -1,153 +1,92 @@
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: #ffebcd;
-}
-html, body {
-    height: 100%;
-    width: 100%;
-    background-color: #1a1a2e;
-    background-image: url('https://static.vecteezy.com/system/resources/previews/023/814/059/large_2x/abstract-colorful-of-smoke-background-neon-light-through-smoke-or-fog-lighting-in-the-dark-scene-multi-colored-of-cloud-mist-or-smog-night-backdrop-for-mock-up-with-generative-ai-free-photo.jpeg'); /* Add your background image */
-    background-position: center;
-    background-size: cover; 
-    background-attachment: fixed; 
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1a202c;
+    color: #e2e8f0;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* Main Container */
-#main { 
-    height: 80vh;
-    width: 50%;
-    position: relative;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
-/* Music Card */
-#card {
-    height: 600px;
-    width: 370px;
-    border: solid rgb(5, 157, 238);
-    backdrop-filter: blur(3px); 
-    background: rgba(0, 0, 0, 0.193);
-    padding: 30px;
-    border-radius: 20px;
-    position: relative;
-    
-}
-
-#card img {
-    width: 100%;
-    height: 50%;
-    object-fit: cover;
-    border-radius: 20px;
-}
-
-/* Player Controls */
-#player {
-    margin-top: 20px;
-    height: 45%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-#player h3 {
-    background-color: #b09511;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-#player h3 i {
-    font-size: 25px;
-    color: #1a1a2e;
-}
-
-#player h3:hover {
-    background-color: #ffd863;
-    transform: scale(1.1);
-}
-
-#player h3:active {
-    scale: 0.9;
-}
-
-/* Song List Section */
-#song-list {
-    height: 600px;
-    width: 370px;
-    border: solid rgb(5, 157, 238);
-    backdrop-filter: blur(3px);
-    border-radius: 20px;
-    padding: 20px;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.193);
-}
-
-#song-list h2 {
-    font-size: 30px;
-    margin-bottom: 15px;
-    color: #04f5e5ec;
-}
-
-#all-songs {
-    height: 80%;
-    overflow-y: auto;
-    scrollbar-width: none;
-}
-
-/* Hide Scrollbar for Webkit Browsers */
-#all-songs::-webkit-scrollbar {
-    display: none;
-}
-
-/* Song Cards */
-.song-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid #000000;
-    padding: 15px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.song-card:hover {
-    background-color: #2b1b1e;
-    transform: scale(1.02);
-}
-
-.song-card:active {
-    transform: scale(0.93);
-}
-
-.song-card:nth-last-child(1) {
-    border-bottom: 1px solid #050400;
-}
-
-/* Song Details */
-.song-card .part-1 {
-    display: flex;
-    align-items: center;
-    pointer-events: none;
+    padding: 1rem;
 }
 
 .song-card img {
-    width: 55px;
-    height: 55px;
-    margin-right: 15px;
-    border-radius: 10px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
+    border-radius: 8px;
+}
+
+#pic {
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.3s ease-in-out;
+}
+
+.control-button {
+    background-color: #3f51b5;
+    color: white;
+    border-radius: 9999px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.control-button:hover {
+    background-color: #5c6bc0;
+    transform: translateY(-2px);
+}
+
+.control-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Responsive sizing for play button */
+#play {
+    width: 64px; /* Default for smaller screens */
+    height: 64px;
+    font-size: 2rem;
+}
+@media (min-width: 640px) { /* On small screens and up */
+    #play {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+}
+
+/* Responsive sizing for forward/backward buttons */
+#forward, #back {
+    width: 48px; /* Default for smaller screens */
+    height: 48px;
+    font-size: 1.5rem;
+}
+@media (min-width: 640px) { /* On small screens and up */
+    #forward, #back {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+}
+
+#all-songs::-webkit-scrollbar {
+    width: 8px;
+}
+
+#all-songs::-webkit-scrollbar-track {
+    background: #2d3748;
+    border-radius: 10px;
+}
+
+#all-songs::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border-radius: 10px;
+}
+
+#all-songs::-webkit-scrollbar-thumb:hover {
+    background: #606d80;
 }
